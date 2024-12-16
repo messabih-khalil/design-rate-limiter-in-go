@@ -5,28 +5,25 @@ import (
 	"time"
 )
 
-
-func main(){
+func main() {
 
 	usersBuckets := map[int]*bucket{
-		1 : initRateLiniter(),
-		2 : initRateLiniter(),
-		3 : initRateLiniter(),
+		1: initRateLiniter(),
+		2: initRateLiniter(),
+		3: initRateLiniter(),
 	}
-	
-
 
 	for i := 0; i < 10; i++ {
-		
+
 	}
-	
+
 	ub := usersBuckets[1]
-	
+
 	go ub.sendRequest()
-	
+
 	// Keep the program running
 	select {}
-	
+
 }
 
 func (b *bucket) sendRequest() {
